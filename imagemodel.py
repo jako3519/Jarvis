@@ -3,7 +3,7 @@ import tensorflow as tf
 from tensorflow import keras
 import json
 
-model = keras.models.load_model("/app/gesture_mobilenet.keras")
+model = keras.models.load_model("/app/assets/gesture_mobilenet.keras")
 
 img = keras.utils.load_img("/app/thumbsUp.jpeg", target_size=(224, 224))
 arr = keras.utils.img_to_array(img)
