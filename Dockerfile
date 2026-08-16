@@ -1,4 +1,4 @@
-FROM nvcr.io/nvidia/l4t-tensorflow:r35.3.1-tf2-py3
+FROM nvcr.io/nvidia/l4t-tensorflow:r36.4.0-tf2-py3
 
 WORKDIR /app
 
