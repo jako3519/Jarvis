@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  jarvis:
+    build: .
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+    volumes:
+      - ./assets:/app/assets
+    restart: unless-stopped

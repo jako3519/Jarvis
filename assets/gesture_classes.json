@@ -1,0 +1,24 @@
+{
+  "classes": [
+    "like",
+    "dislike",
+    "palm",
+    "fist",
+    "peace",
+    "ok",
+    "one"
+  ],
+  "pretty": [
+    "thumbs_up",
+    "thumbs_down",
+    "palm",
+    "fist",
+    "peace",
+    "ok",
+    "one"
+  ],
+  "img_size": [
+    224,
+    224
+  ]
+}
