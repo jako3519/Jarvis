@@ -1,11 +1,11 @@
-FROM ubuntu:22.04
+FROM python:3.11-slim
 
 WORKDIR /app
 
-RUN apt-get update && apt-get install -y python3 python3-pip
+RUN apt-get update && apt-get install -y libgomp1
 
 COPY requirements.txt .
-RUN pip3 install tensorflow pillow numpy
+RUN pip install tensorflow==2.20.0 keras==3.13.2 pillow numpy
 
 COPY . .
 
