@@ -5,7 +5,7 @@ import json
 
 model = keras.models.load_model("/app/assets/gesture_mobilenet.keras")
 
-img = keras.utils.load_img("/app/thumbsUp.jpeg", target_size=(224, 224))
+img = keras.utils.load_img("/app/assets/thumbsUp.jpeg", target_size=(224, 224))
 arr = keras.utils.img_to_array(img)
 img_array = np.expand_dims(arr, 0)
 
