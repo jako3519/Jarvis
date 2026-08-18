@@ -27,7 +27,7 @@ while True:
     if diff.mean() > 5:
         rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
         resized = cv2.resize(rgb_frame, (224, 224))
-        img_array = np.expand_dims(resized.astype(np.float32), axis=0)
+        img_array = np.expand_dims(resized, axis=0)
         output = model.predict(img_array, verbose=0)[0]
         predicted = classes["pretty"][int(np.argmax(output))]
         confidence = np.max(output) * 100
