@@ -24,16 +24,20 @@ while True:
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     diff = cv2.absdiff(prev_gray, gray)
 
-    if diff.mean() > 10:
+    if diff.mean() > 25:
         rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
         resized = cv2.resize(rgb_frame, (224, 224))
         img_array = np.expand_dims(resized.astype(np.float32), axis=0)
         output = model.predict(img_array, verbose=0)[0]
         predicted = classes["pretty"][int(np.argmax(output))]
         confidence = np.max(output) * 100
-        print(f"Prediction: {predicted} ({confidence:.1f}%)", flush=True)
+        if confidence > 80: 
+             print(f"Prediction: {predicted} ({confidence:.1f}%)", flush=True)
 
     prev_gray = gray
-    time.sleep(0.1)
+    time.sleep(0.2)
+
+
+
 
 cap.release()
