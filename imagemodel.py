@@ -24,7 +24,7 @@ while True:
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     diff = cv2.absdiff(prev_gray, gray)
 
-    if diff.mean() > 25:
+    if diff.mean() > 20:
         rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
         resized = cv2.resize(rgb_frame, (224, 224))
         img_array = np.expand_dims(resized.astype(np.float32), axis=0)
