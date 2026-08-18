@@ -15,7 +15,7 @@ if not ret:
     raise RuntimeError("Could not read from webcam.")
 
 prev_gray = cv2.cvtColor(prev_frame, cv2.COLOR_BGR2GRAY)
-
+#just to make sure the model is loaded and ready
 while True:
     ret, frame = cap.read()
     if not ret:
