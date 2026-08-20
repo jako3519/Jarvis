@@ -1,9 +1,10 @@
 using MQTTnet;
 using MQTTnet.Client;
 using System.Text;
-
-public class JarvisClient
+namespace Jarvisc
 {
+    public class JarvisClient
+    {
     private IMqttClient _mqttClient;
 
     public async Task ConnectAsync()
@@ -35,4 +36,4 @@ public class JarvisClient
     {
         Console.WriteLine($"Gesture: {gesture} modtaget, c#");
     }
-}
+}}

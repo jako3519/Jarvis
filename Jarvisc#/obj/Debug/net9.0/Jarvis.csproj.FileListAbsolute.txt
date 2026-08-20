@@ -4,3 +4,15 @@ C:\Users\jako3\softwareJakob\Jarvis\Jarvisc#\obj\Debug\net9.0\Jarvis.AssemblyInf
 C:\Users\jako3\softwareJakob\Jarvis\Jarvisc#\obj\Debug\net9.0\Jarvis.AssemblyInfo.cs
 C:\Users\jako3\softwareJakob\Jarvis\Jarvisc#\obj\Debug\net9.0\Jarvis.csproj.CoreCompileInputs.cache
 C:\Users\jako3\softwareJakob\Jarvis\Jarvisc#\obj\Debug\net9.0\Jarvis.sourcelink.json
+C:\Users\jako3\softwareJakob\Jarvis\Jarvisc#\bin\Debug\net9.0\Jarvis.exe
+C:\Users\jako3\softwareJakob\Jarvis\Jarvisc#\bin\Debug\net9.0\Jarvis.deps.json
+C:\Users\jako3\softwareJakob\Jarvis\Jarvisc#\bin\Debug\net9.0\Jarvis.runtimeconfig.json
+C:\Users\jako3\softwareJakob\Jarvis\Jarvisc#\bin\Debug\net9.0\Jarvis.dll
+C:\Users\jako3\softwareJakob\Jarvis\Jarvisc#\bin\Debug\net9.0\Jarvis.pdb
+C:\Users\jako3\softwareJakob\Jarvis\Jarvisc#\bin\Debug\net9.0\MQTTnet.dll
+C:\Users\jako3\softwareJakob\Jarvis\Jarvisc#\obj\Debug\net9.0\Jarvis.csproj.Up2Date
+C:\Users\jako3\softwareJakob\Jarvis\Jarvisc#\obj\Debug\net9.0\Jarvis.dll
+C:\Users\jako3\softwareJakob\Jarvis\Jarvisc#\obj\Debug\net9.0\refint\Jarvis.dll
+C:\Users\jako3\softwareJakob\Jarvis\Jarvisc#\obj\Debug\net9.0\Jarvis.pdb
+C:\Users\jako3\softwareJakob\Jarvis\Jarvisc#\obj\Debug\net9.0\Jarvis.genruntimeconfig.cache
+C:\Users\jako3\softwareJakob\Jarvis\Jarvisc#\obj\Debug\net9.0\ref\Jarvis.dll
