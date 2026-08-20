@@ -8,8 +8,9 @@ RUN pip install --no-cache-dir \
     keras==3.13.2 \
     pillow \
     numpy \
-    opencv-python-headless \    
-    paho-mqtt
+    opencv-python-headless \
+    paho-mqtt \
+    mediapipe
 
 COPY . .
 
