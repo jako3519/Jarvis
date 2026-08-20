@@ -8,7 +8,8 @@ RUN pip install --no-cache-dir \
     keras==3.13.2 \
     pillow \
     numpy \
-    opencv-python-headless
+    opencv-python-headless \    
+    paho-mqtt
 
 COPY . .
 
