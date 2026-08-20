@@ -1,6 +1,22 @@
 services:
-  jarvis:
-    image: jako3519/jarvis:latest
+  mosquitto:
+    image: eclipse-mosquitto
+    restart: unless-stopped
+    ports:
+      - "1883:1883"
+    volumes:
+      - ./mosquitto.conf:/mosquitto/config/mosquitto.conf
+
+  jarvis-python:
+    image: jako3519/jarvis-python:latest
     restart: unless-stopped
     devices:
       - /dev/video0:/dev/video0
+    depends_on:
+      - mosquitto
+
+  jarvis-csharp:
+    image: jako3519/jarvis-csharp:latest
+    restart: unless-stopped
+    depends_on:
+      - mosquitto
