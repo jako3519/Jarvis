@@ -2,10 +2,11 @@ import cv2
 import json
 import numpy as np
 import time
-from collections import defaultdict
 from tensorflow import keras
 import paho.mqtt.client as mqtt
-import time
+import mediapipe as mp
+
+mp_gesture = mp.solutions.gesture_recognizer
 
 while True:
     try:
@@ -22,15 +23,21 @@ model = keras.models.load_model("/app/assets/gesture_mobilenet.keras")
 with open("/app/assets/gesture_classes.json") as f:
     classes = json.load(f)
 
+recognizer = mp_gesture.GestureRecognizer.create_from_options(
+    mp_gesture.GestureRecognizerOptions(
+        base_options=mp.tasks.BaseOptions(
+            model_asset_path="/app/assets/gesture_recognizer.task"
+        ),
+        running_mode=mp.tasks.vision.RunningMode.IMAGE
+    )
+)
+
 cap = cv2.VideoCapture(0)
 ret, prev_frame = cap.read()
 if not ret:
     raise RuntimeError("Could not read from webcam.")
 
 prev_gray = cv2.cvtColor(prev_frame, cv2.COLOR_BGR2GRAY)
-
-counts = defaultdict(int)
-last_prediction = None
 
 while True:
     ret, frame = cap.read()
@@ -48,19 +55,16 @@ while True:
         predicted = classes["pretty"][int(np.argmax(output))]
         confidence = np.max(output) * 100
 
-        if confidence > 90:
-            if predicted != last_prediction:
-                counts.clear()
-                last_prediction = predicted
-            
-            counts[predicted] += 1
-            print(f"{predicted}: {counts[predicted]}/5 ({confidence:.1f}%)", flush=True)
+        mp_image = mp.Image(image_format=mp.ImageFormat.SRGB, data=rgb_frame)
+        result = recognizer.recognize(mp_image)
 
-            if counts[predicted] >= 5:
+        if result.gestures:
+            mediapipe_gesture = result.gestures[0][0].category_name
+            print(f"MediaPipe: {mediapipe_gesture} | Model: {predicted} ({confidence:.1f}%)", flush=True)
+
+            if mediapipe_gesture == predicted and confidence > 90:
                 mqtt_client.publish("jarvis/gesture", predicted)
-                print(f"SENT: {predicted}", flush=True)
-                counts.clear()
-                last_prediction = None
+                print(f"CONFIRMED: {predicted}", flush=True)
 
     prev_gray = gray
     time.sleep(0.1)
