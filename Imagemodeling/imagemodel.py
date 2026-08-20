@@ -5,9 +5,17 @@ import time
 from collections import defaultdict
 from tensorflow import keras
 import paho.mqtt.client as mqtt
+import time
 
-mqtt_client = mqtt.Client()
-mqtt_client.connect("localhost", 1883)
+while True:
+    try:
+        mqtt_client = mqtt.Client()
+        mqtt_client.connect("mosquitto", 1883)
+        print("Forbundet til Mosquitto!", flush=True)
+        break
+    except Exception as e:
+        print(f"Venter på Mosquitto... {e}", flush=True)
+        time.sleep(2)
 
 model = keras.models.load_model("/app/assets/gesture_mobilenet.keras")
 
