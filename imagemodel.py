@@ -33,8 +33,7 @@ while True:
         confidence = np.max(output) * 100
         if confidence > 85: 
              print(f"Prediction: {predicted} ({confidence:.1f}%)", flush=True)
-        else:
-            print(f"LowerPrediction: {predicted} ({confidence:.1f}%)", flush=True)
+        
     prev_gray = gray
     time.sleep(0.1)
 
