@@ -10,8 +10,6 @@ RUN apt-get update && apt-get install -y \
     libegl1 \
     libgles2 \
     mesa-common-dev \
-    libegl1-mesa \
-    libgles2-mesa \
     && rm -rf /var/lib/apt/lists/*
 COPY requirements.txt .
 RUN pip install --no-cache-dir \
