@@ -12,6 +12,8 @@ services:
     restart: unless-stopped
     devices:
       - /dev/video0:/dev/video0
+    volumes:
+      - ./assets:/app/assets
     depends_on:
       - mosquitto
 
