@@ -6,31 +6,42 @@ namespace Jarvisc
     public class JarvisClient
     {
     private IMqttClient _mqttClient;
+public async Task ConnectAsync()
+{
+    var factory = new MqttFactory();
+    _mqttClient = factory.CreateMqttClient();
 
-    public async Task ConnectAsync()
+    _mqttClient.ApplicationMessageReceivedAsync += message =>
     {
-        var factory = new MqttFactory();
-        _mqttClient = factory.CreateMqttClient();
-
-        _mqttClient.ApplicationMessageReceivedAsync += message =>
-        {
-            var gesture = Encoding.UTF8.GetString(
-                message.ApplicationMessage.PayloadSegment
-            );
-            HandleGesture(gesture);
-            return Task.CompletedTask;
-        };
-
-        //lort
-
-        await _mqttClient.ConnectAsync(
-            new MqttClientOptionsBuilder()
-                .WithTcpServer("192.168.1.215", 1883)
-                .Build()
+        var gesture = Encoding.UTF8.GetString(
+            message.ApplicationMessage.PayloadSegment
         );
+        HandleGesture(gesture);
+        return Task.CompletedTask;
+    };
 
-        await _mqttClient.SubscribeAsync("jarvis/gesture");
+    var options = new MqttClientOptionsBuilder()
+        .WithTcpServer("mosquitto", 1883)
+        .Build();
+
+    // Retry indtil Mosquitto er klar
+    while (true)
+    {
+        try
+        {
+            await _mqttClient.ConnectAsync(options);
+            break;
+        }
+        catch
+        {
+            Console.WriteLine("Venter på Mosquitto...");
+            await Task.Delay(2000);
+        }
     }
+
+    await _mqttClient.SubscribeAsync("jarvis/gesture");
+    Console.WriteLine("Forbundet til Mosquitto!");
+}
 //test
     private void HandleGesture(string gesture)
     {
