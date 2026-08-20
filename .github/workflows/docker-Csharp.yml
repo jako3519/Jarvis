@@ -1,10 +1,10 @@
-name: Build and Push Python Image
+name: Build and Push CSharp Image
 
 on:
   push:
     branches: [main]
     paths:
-      - 'Imagemodeling/**'
+      - 'ControllersCSharp/**'
 
 jobs:
   build:
@@ -27,7 +27,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
-          context: ./Imagemodeling
+          context: ./ControllersCSharp
           platforms: linux/arm64
           push: true
-          tags: jako3519/jarvis-python:latest
+          tags: jako3519/jarvis-csharp:latest
