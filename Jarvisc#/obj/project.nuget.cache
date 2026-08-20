@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "rneGmqfO4Q0=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\jako3\\softwareJakob\\Jarvis\\ControllersC#\\Jarvis\\Jarvis.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\jako3\\.nuget\\packages\\mqttnet\\5.2.0.1603\\mqttnet.5.2.0.1603.nupkg.sha512"
+  ],
+  "logs": []
+}
