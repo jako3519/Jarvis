@@ -30,7 +30,7 @@ public class JarvisClient
 
         await _mqttClient.SubscribeAsync("jarvis/gesture");
     }
-
+//test
     private void HandleGesture(string gesture)
     {
         Console.WriteLine($"Gesture: {gesture} modtaget, c#");

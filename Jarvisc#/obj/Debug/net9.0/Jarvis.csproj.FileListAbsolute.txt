@@ -1,0 +1,6 @@
+C:\Users\jako3\softwareJakob\Jarvis\Jarvisc#\obj\Debug\net9.0\Jarvis.csproj.AssemblyReference.cache
+C:\Users\jako3\softwareJakob\Jarvis\Jarvisc#\obj\Debug\net9.0\Jarvis.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jako3\softwareJakob\Jarvis\Jarvisc#\obj\Debug\net9.0\Jarvis.AssemblyInfoInputs.cache
+C:\Users\jako3\softwareJakob\Jarvis\Jarvisc#\obj\Debug\net9.0\Jarvis.AssemblyInfo.cs
+C:\Users\jako3\softwareJakob\Jarvis\Jarvisc#\obj\Debug\net9.0\Jarvis.csproj.CoreCompileInputs.cache
+C:\Users\jako3\softwareJakob\Jarvis\Jarvisc#\obj\Debug\net9.0\Jarvis.sourcelink.json

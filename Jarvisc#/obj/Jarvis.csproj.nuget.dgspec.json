@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jako3\\softwareJakob\\Jarvis\\ControllersC#\\Jarvis\\Jarvis.csproj": {}
+    "C:\\Users\\jako3\\softwareJakob\\Jarvis\\Jarvisc#\\Jarvis.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jako3\\softwareJakob\\Jarvis\\ControllersC#\\Jarvis\\Jarvis.csproj": {
+    "C:\\Users\\jako3\\softwareJakob\\Jarvis\\Jarvisc#\\Jarvis.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jako3\\softwareJakob\\Jarvis\\ControllersC#\\Jarvis\\Jarvis.csproj",
+        "projectUniqueName": "C:\\Users\\jako3\\softwareJakob\\Jarvis\\Jarvisc#\\Jarvis.csproj",
         "projectName": "Jarvis",
-        "projectPath": "C:\\Users\\jako3\\softwareJakob\\Jarvis\\ControllersC#\\Jarvis\\Jarvis.csproj",
+        "projectPath": "C:\\Users\\jako3\\softwareJakob\\Jarvis\\Jarvisc#\\Jarvis.csproj",
         "packagesPath": "C:\\Users\\jako3\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jako3\\softwareJakob\\Jarvis\\ControllersC#\\Jarvis\\obj\\",
+        "outputPath": "C:\\Users\\jako3\\softwareJakob\\Jarvis\\Jarvisc#\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jako3\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -47,7 +47,7 @@
           "dependencies": {
             "MQTTnet": {
               "target": "Package",
-              "version": "[5.2.0.1603, )"
+              "version": "[4.3.7.1207, )"
             }
           },
           "imports": [

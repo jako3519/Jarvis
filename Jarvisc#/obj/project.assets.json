@@ -2,15 +2,15 @@
   "version": 3,
   "targets": {
     "net9.0": {
-      "MQTTnet/5.2.0.1603": {
+      "MQTTnet/4.3.7.1207": {
         "type": "package",
         "compile": {
-          "lib/net8.0/MQTTnet.dll": {
+          "lib/net7.0/MQTTnet.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net8.0/MQTTnet.dll": {
+          "lib/net7.0/MQTTnet.dll": {
             "related": ".xml"
           }
         }
@@ -18,19 +18,37 @@
     }
   },
   "libraries": {
-    "MQTTnet/5.2.0.1603": {
-      "sha512": "iNuWVo/568aRo2ExEN2qkC4J5b07ckKqt+9Uok2kIbbK7PMBsXvYiKVENPHmOBWFB5ExhlNQb/qQ8M9/IYRTdQ==",
+    "MQTTnet/4.3.7.1207": {
+      "sha512": "ah7aHXoedWp5m5a4zy2u4phOEVj0QFYzOb5tFKQeV8RRBrxp+1QREF4ymZuG8D+hzB2dhtrrG81WxTFv0PzOeQ==",
       "type": "package",
-      "path": "mqttnet/5.2.0.1603",
+      "path": "mqttnet/4.3.7.1207",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "LICENSE",
-        "lib/net10.0/MQTTnet.dll",
-        "lib/net10.0/MQTTnet.xml",
-        "lib/net8.0/MQTTnet.dll",
-        "lib/net8.0/MQTTnet.xml",
-        "mqttnet.5.2.0.1603.nupkg.sha512",
+        "lib/net452/MQTTnet.dll",
+        "lib/net452/MQTTnet.xml",
+        "lib/net461/MQTTnet.dll",
+        "lib/net461/MQTTnet.xml",
+        "lib/net48/MQTTnet.dll",
+        "lib/net48/MQTTnet.xml",
+        "lib/net5.0/MQTTnet.dll",
+        "lib/net5.0/MQTTnet.xml",
+        "lib/net6.0/MQTTnet.dll",
+        "lib/net6.0/MQTTnet.xml",
+        "lib/net7.0/MQTTnet.dll",
+        "lib/net7.0/MQTTnet.xml",
+        "lib/netcoreapp3.1/MQTTnet.dll",
+        "lib/netcoreapp3.1/MQTTnet.xml",
+        "lib/netstandard1.3/MQTTnet.dll",
+        "lib/netstandard1.3/MQTTnet.xml",
+        "lib/netstandard2.0/MQTTnet.dll",
+        "lib/netstandard2.0/MQTTnet.xml",
+        "lib/netstandard2.1/MQTTnet.dll",
+        "lib/netstandard2.1/MQTTnet.xml",
+        "lib/uap10.0.10240/MQTTnet.dll",
+        "lib/uap10.0.10240/MQTTnet.pri",
+        "lib/uap10.0.10240/MQTTnet.xml",
+        "mqttnet.4.3.7.1207.nupkg.sha512",
         "mqttnet.nuspec",
         "nuget.png"
       ]
@@ -38,7 +56,7 @@
   },
   "projectFileDependencyGroups": {
     "net9.0": [
-      "MQTTnet >= 5.2.0.1603"
+      "MQTTnet >= 4.3.7.1207"
     ]
   },
   "packageFolders": {
@@ -47,11 +65,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jako3\\softwareJakob\\Jarvis\\ControllersC#\\Jarvis\\Jarvis.csproj",
+      "projectUniqueName": "C:\\Users\\jako3\\softwareJakob\\Jarvis\\Jarvisc#\\Jarvis.csproj",
       "projectName": "Jarvis",
-      "projectPath": "C:\\Users\\jako3\\softwareJakob\\Jarvis\\ControllersC#\\Jarvis\\Jarvis.csproj",
+      "projectPath": "C:\\Users\\jako3\\softwareJakob\\Jarvis\\Jarvisc#\\Jarvis.csproj",
       "packagesPath": "C:\\Users\\jako3\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jako3\\softwareJakob\\Jarvis\\ControllersC#\\Jarvis\\obj\\",
+      "outputPath": "C:\\Users\\jako3\\softwareJakob\\Jarvis\\Jarvisc#\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\jako3\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -87,7 +105,7 @@
         "dependencies": {
           "MQTTnet": {
             "target": "Package",
-            "version": "[5.2.0.1603, )"
+            "version": "[4.3.7.1207, )"
           }
         },
         "imports": [
