@@ -3,8 +3,6 @@ name: Build and Push CSharp Image
 on:
   push:
     branches: [main]
-    paths:
-      - 'ControllersCSharp/**'
 
 jobs:
   build:

@@ -3,8 +3,6 @@ name: Build and Push Python Image
 on:
   push:
     branches: [main]
-    paths:
-      - 'Imagemodeling/**'
 
 jobs:
   build:
