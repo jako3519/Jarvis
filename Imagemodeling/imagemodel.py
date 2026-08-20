@@ -4,9 +4,9 @@ import numpy as np
 import time
 from tensorflow import keras
 import paho.mqtt.client as mqtt
-import mediapipe as mp
+from mediapipe.tasks import python as mp_python
+from mediapipe.tasks.python import vision
 
-mp_gesture = mp.solutions.gesture_recognizer
 
 while True:
     try:
@@ -23,12 +23,12 @@ model = keras.models.load_model("/app/assets/gesture_mobilenet.keras")
 with open("/app/assets/gesture_classes.json") as f:
     classes = json.load(f)
 
-recognizer = mp_gesture.GestureRecognizer.create_from_options(
-    mp_gesture.GestureRecognizerOptions(
-        base_options=mp.tasks.BaseOptions(
+recognizer = vision.GestureRecognizer.create_from_options(
+    vision.GestureRecognizerOptions(
+        base_options=mp_python.BaseOptions(
             model_asset_path="/app/assets/gesture_recognizer.task"
         ),
-        running_mode=mp.tasks.vision.RunningMode.IMAGE
+        running_mode=vision.RunningMode.IMAGE
     )
 )
 
@@ -55,7 +55,7 @@ while True:
         predicted = classes["pretty"][int(np.argmax(output))]
         confidence = np.max(output) * 100
 
-        mp_image = mp.Image(image_format=mp.ImageFormat.SRGB, data=rgb_frame)
+        mp_image = mp_python.Image(image_format=mp_python.ImageFormat.SRGB, data=rgb_frame)
         result = recognizer.recognize(mp_image)
 
         if result.gestures:
