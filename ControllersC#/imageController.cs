@@ -20,6 +20,8 @@ public class JarvisClient
             return Task.CompletedTask;
         };
 
+        //lort
+
         await _mqttClient.ConnectAsync(
             new MqttClientOptionsBuilder()
                 .WithTcpServer("192.168.1.215", 1883)
