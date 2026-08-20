@@ -1,7 +1,9 @@
 FROM python:3.11-slim
-
 WORKDIR /app
-
+RUN apt-get update && apt-get install -y \
+    libxcb1 \
+    libgl1 \
+    && rm -rf /var/lib/apt/lists/*
 COPY requirements.txt .
 RUN pip install --no-cache-dir \
     tensorflow==2.20.0 \
@@ -11,7 +13,5 @@ RUN pip install --no-cache-dir \
     opencv-python-headless \
     paho-mqtt \
     mediapipe
-
 COPY . .
-
 CMD ["python3", "imagemodel.py"]
