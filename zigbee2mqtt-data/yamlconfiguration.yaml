@@ -3,7 +3,7 @@ mqtt:
   server: mqtt://mosquitto:1883
 serial:
   port: /dev/ttyUSB0
-  adapter: zstack
+  adapter: ember
 frontend:
   enabled: true
   port: 8080
