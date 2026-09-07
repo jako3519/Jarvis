@@ -13,6 +13,8 @@ while True:
     try:
         mqtt_client = mqtt.Client()
         mqtt_client.connect("mosquitto", 1883)
+        mqtt_client.loop_start()
+        
         print("Forbundet til Mosquitto!", flush=True)
         break
     except Exception as e:
