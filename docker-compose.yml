@@ -10,6 +10,8 @@ services:
   jarvis-python:
     image: jako3519/jarvis-python:latest
     restart: unless-stopped
+    environment:
+      - PYTHONUNBUFFERED=1
     devices:
       - /dev/video0:/dev/video0
     volumes:
@@ -35,3 +37,10 @@ services:
     restart: unless-stopped
     depends_on:
       - mosquitto
+
+  watchtower:
+    image: containrrr/watchtower
+    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: --interval 300 --cleanup
