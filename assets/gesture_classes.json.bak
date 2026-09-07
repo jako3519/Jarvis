@@ -9,13 +9,13 @@
     "one"
   ],
   "pretty": [
-    "Thumb_Up",
-    "Thumb_Down",
-    "Open_Palm",
-    "Closed_Fist",
-    "Victory",
-    "OK",
-    "Pointing_Up"
+    "thumbs_up",
+    "thumbs_down",
+    "palm",
+    "fist",
+    "peace",
+    "ok",
+    "one"
   ],
   "img_size": [
     224,

@@ -22,3 +22,16 @@ services:
     restart: unless-stopped
     depends_on:
       - mosquitto
+
+  zigbee2mqtt:
+    image: koenkk/zigbee2mqtt:latest
+    volumes:
+      - ./zigbee2mqtt-data:/app/data
+      - /run/udev:/run/udev:ro
+    devices:
+      - /dev/serial/by-id/usb-Itead_Sonoff_Zigbee_3.0_USB_Dongle_Plus_V2_90e8e0dad378f011a3a6efeba7772636-if00-port0:/dev/ttyUSB0
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+    depends_on:
+      - mosquitto
