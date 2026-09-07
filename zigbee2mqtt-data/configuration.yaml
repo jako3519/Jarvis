@@ -7,3 +7,5 @@ serial:
 frontend:
   enabled: true
   port: 8080
+advanced:
+  channel: 20
